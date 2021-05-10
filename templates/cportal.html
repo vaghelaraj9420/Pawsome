@@ -1,0 +1,322 @@
+{% load static %}
+{% static "media\pics" as baseUrl %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Caretaker Portal</title>
+
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="{% static 'mycss/styles.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+  <!-- bootstrap Scripts -->
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' %}" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Font styles:- -->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap' %}" rel="stylesheet">
+
+  <!--fontawesome -->
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+  <style media="screen">
+    body {
+      {% comment %} font-family: "Montserrat"; {% endcomment %}
+      background-color: grey;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      {% comment %} font-style: "Montserrat-Black"; {% endcomment %}
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+
+
+    /* Heading Section */
+    .heading {
+
+      font-family: "Montserrat-Black";
+      {% comment %} font-size: 3.5rem; {% endcomment %}
+      line-height: 1.5;
+    }
+
+    #top-section {
+      margin-top: 50px;
+    }
+
+    .Big-heading {
+      font-family: "Montserrat-Black";
+      {% comment %} font-size: 3.5rem; {% endcomment %}
+      line-height: 1.5;
+    }
+
+    #title {
+      background-color: #ff4c68;
+      color: #fff;
+    }
+
+    .container {
+      padding-bottom: 4.5rem;
+      /* padding: 3% 15% 8%; */
+      /* right: 50px; */
+    }
+
+
+
+
+    /* Navbar */
+
+    .navbar {
+      padding-bottom: 4.5rem;
+      padding-left: 0px;
+    }
+
+    .navbar-brand {
+      font-family: "Ubuntu";
+      font-weight: bold;
+    }
+
+    .nav-item {
+      padding: 0 18px;
+    }
+
+    .nav-link {
+      font-family: "Montserrat-light";
+      font-size: 1.2rem;
+    }
+
+
+
+
+    /* Navbar Button */
+    .download-button {
+      margin: 5% 3% 5% 0;
+    }
+
+
+
+
+    /* Title Image */
+    .title-image {
+      /* transform: rotate(25deg); */
+      width: 50%;
+      margin-left: 40px;
+      margin-top: 50px;
+      border-style: 10px solid;
+      position: absolute;
+      z-index: 1;
+      right: 150px;
+    }
+
+    @media (max-width: 1040px) {
+      .container {
+        text-align: center;
+      }
+
+      .title-image {
+        position: static;
+        transform: rotate(0);
+      }
+    }
+
+
+
+
+    /* Features section */
+
+    #features {
+      background-color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    .features-box {
+      text-align: center;
+    }
+
+    .para {
+      padding: 5%;
+      color: #808080;
+    }
+
+
+    .icon {
+      color: #ff4c68;
+      margin-bottom: 1rem;
+    }
+
+    .icon:hover {
+      color: red;
+    }
+
+    #features {
+      padding: 7% 15%;
+    }
+
+
+    /* testimonials-section */
+    #testimonials {
+      background-color: #ff4c68;
+      color: white;
+      text-align: center;
+      font-style: "Montserrat-Bold";
+      line-height: 1.5;
+
+    }
+
+    .testimonials-img {
+      width: 5%;
+      border-radius: 100%;
+      padding: 5px;
+    }
+
+    .testimonial-image {
+      width: 20%;
+      height: 20%;
+    }
+
+    .testimonial-text {
+      font-size: 3rem;
+      line-height: 1.5;
+    }
+
+    .carousel-item {
+      padding: 5%;
+    }
+
+
+
+
+    /* press-section */
+    #press {
+      background-color: #ff4c68;
+      padding-bottom: 3%;
+      padding-top: 5%;
+      text-align: center;
+    }
+
+    .press-img {
+      width: 15%;
+      margin: 20px 20px 50px;
+    }
+
+
+    /* Pricing Section */
+
+    .pricing-section {
+      padding: 20px;
+    }
+
+    .top {
+      padding-top: 50px;
+    }
+
+
+    /* CTA Section */
+    #cta {
+      background-color: #ff4c68;
+      text-align: center;
+      line-height: 1.5;
+      padding: 7% 15%;
+      padding-bottom: 60px;
+      color: #fff;
+      font-family: "Montserrat-Black";
+      font-weight: bold;
+      font-size: 3.5rem;
+    }
+
+    .last-line {
+      margin-bottom: 40px;
+    }
+
+    /* Footer Section */
+    #footer {
+      background-color: #fff;
+      text-align: center;
+      color: #808080;
+      margin: 30px;
+      line-height: 2rem;
+
+    }
+
+    .social-icon {
+      margin: 20px 10px;
+    }
+  </style>
+
+</head>
+
+<body style="background-color: #f0f8ff;">
+
+  <section id="title">
+    <div class="container">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light-lg navbar-dark" style="padding: 0 0 4.5rem;">
+        <a class="navbar-brand" style="font-size: 2.5rem;" href="/">Pawsome</a>
+
+        <div id="top-section">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" style="margin-left: 500px;">
+                <a class="nav-link active" href="products/contact">contact</a>
+              </li>
+              {% comment %} {% if caretaker.is_authenticated %} {% endcomment %}
+              <li><a class="nav-link active" style="margin-left: 50px;"> Hello, {{caretaker.name}}</a></li>
+              <li><a class="nav-link active" style="margin-left: 50px;" href="caretakerlogout">Logout</a></li>
+              {% comment %} {% endif %} {% endcomment %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="heading Big-heading">{{caretaker.name}}</h1>
+          {% comment %} <button type="button" class="btn btn-dark btn-lg download-button" onclick="document.location='PetList'"><i class="fas fa-paw"></i> Edit your profile</button> {% endcomment %}
+          <button type="button" class="btn btn-outline-light btn-dark btn-lg download-button" onclick="document.location='customer-deals'"><i class="fas fa-mouse-pointer"></i> Accept Customer Deals!</button>
+          <h3 class="">Email: {{caretaker.email}}</h3>
+          <br>
+          <h3 class="">Location: {{caretaker.location}}</h3>
+          <br>
+          <h3 class="">Address: {{caretaker.adds}}</h3>
+          <br>
+          <h3 class="">Rate: <i class="fas fa-rupee-sign"></i> {{caretaker.rate}} / Day</h3>
+          <br>
+          <h3 class="">Contact: {{caretaker.contact}}</h3>
+          <br>
+
+          {% comment %} <p class="heading Big-heading">Location: {{caretaker.location}}</p>
+          <p class="heading Big-heading">Address: {{caretaker.adds}}</p>
+          <p class="heading Big-heading">Rate: {{caretaker.rate}}</p>
+          <p class="heading Big-heading">Contact: {{caretaker.contact}}</p> {% endcomment %}
+        </div>
+
+        <div class="col-lg-6 title-img">
+          <img class="title-image" src="/media/pics/caretaker1.jpg" alt="Caretaker-img">
+        </div>
+      </div>
+
+</body>
+
+</html>

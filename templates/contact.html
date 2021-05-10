@@ -1,0 +1,192 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.80.0">
+  <title>Contact Us</title>
+
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static '/docs/5.0/dist/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="{bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/1fded5d95a.js"></script>
+
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="{% static 'mycss/styles.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+  <!-- bootstrap Scripts -->
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' %}" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Font styles:- -->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap' %}" rel="stylesheet">
+
+  <!--fontawesome -->
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+
+
+
+  <!-- Custom styles for this template -->
+  <link href="cover.css" rel="stylesheet">
+
+
+  <style>
+    #title {
+      background-color: #ff4c68;
+      color: #fff;
+    }
+
+    .container {
+      background-color: #e6ffff;
+    }
+
+    body {
+      font-family: "Montserrat";
+
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-style: "Montserrat-Black";
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+
+
+
+    /* Navbar */
+
+    .navbar {
+      padding-bottom: 4.5rem;
+      padding-left: 0px;
+    }
+
+    .navbar-brand {
+      font-family: "Ubuntu";
+      font-weight: bold;
+    }
+
+    .nav-item {
+      padding: 0 18px;
+    }
+
+    .nav-link {
+      font-family: "Montserrat-light";
+      font-size: 1.2rem;
+    }
+  </style>
+
+</head>
+
+
+
+<body class="d-flex h-100 text-center text-white" style="background-color: #e6ffff;">
+
+  <section class="mx-auto">
+    <div id="title" class="mx-auto mb-2" style="">
+      <nav class="navbar navbar-expand-lg navbar-light-lg navbar-dark" style="padding: 0 0 2.5rem;">
+        <a class="navbar-brand" style="font-size: 2.5rem;" href="/">Pawsome</a>
+
+        <div id="top-section">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+            <ul class="navbar-nav ml-auto" style="margin-top: 30px;">
+              <li class="nav-item" style="margin-left: 50px;">
+                <a class="nav-link active" href="/contact">contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/buy12">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/faq">FAQ</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active" href="/DayCare">Daycare</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/Caretaker">Caretaker</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/vet">Ask a veterinary</a>
+              </li>
+              {% comment %} {% if user.is_authenticated %} {% endcomment %}
+              <li><a class="nav-link active"> Hello, {{user.first_name}}</a></li>
+              <li><a class="nav-link active" href="accounts/logout">Logout</a></li>
+              {% else %}
+              <li><a class="nav-link active" href="accounts/signup">Register</a></li>
+              <li><a class="nav-link active" href="accounts/login">Login</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+
+    <div class="container">
+      <h2 style="padding-bottom: 30px;  color: black;">Contact Us</h2>
+      <form action="contact" method="post" style="text-style: bold; color: black;">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        <div class="form-group">
+          <label for="name">Phone</label>
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>
+        <div class="form-group">
+          <div class="form-group">
+            <label for="desc">How May We Help You ?</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>

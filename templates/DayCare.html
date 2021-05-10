@@ -1,0 +1,288 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Daycare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <!-- css stylesheet -->
+  <link rel="stylesheet" href="{% static 'mycss/styles.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+  <!-- bootstrap Scripts -->
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' %}" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Font styles:- -->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap' %}" rel="stylesheet">
+
+  <!--fontawesome -->
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+  
+
+    <style>
+
+  #title {
+    background-color: #ff4c68;
+    color: #fff;
+  }
+
+  .container{
+
+  }
+
+  body {
+    font-family: "Montserrat";
+    background-color: grey;
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-style: "Montserrat-Black";
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+
+
+
+  /* Navbar */
+
+  .navbar {
+    padding-bottom: 4.5rem;
+    padding-left: 0px;
+  }
+
+  .navbar-brand{
+    font-family: "Ubuntu";
+    font-weight: bold;
+  }
+
+  .nav-item {
+    padding: 0 18px;
+  }
+
+  .nav-link {
+    font-family: "Montserrat-light";
+    font-size: 1.2rem;
+  }
+</style>
+
+
+</head>
+<body style="background-color: #f0f8ff;">
+
+<section id="title" class="mx-auto mb-4" style="">
+     <nav class="navbar navbar-expand-lg navbar-light-lg navbar-dark" style="padding: 0 0 2.5rem;">
+        <a class="navbar-brand" style="font-size: 2.5rem;" href="/">Pawsome</a>
+
+        <div id="top-section">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+          <ul class="navbar-nav ml-auto" style="margin-top: 30px;">
+            <li class="nav-item" style="margin-left: 50px;">
+              <a class="nav-link active" href="/contact">contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/buy12">Buy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/faq">FAQ</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link active" href="/DayCare">Daycare</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/Caretaker">Caretaker</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/vet">Ask a veterinary</a>
+            </li>
+            {% comment %} {% if user.is_authenticated %} {% endcomment %}
+										<li><a class="nav-link active"> Hello, {{user.first_name}}</a></li>
+										<li><a class="nav-link active" href="accounts/logout">Logout</a></li>
+										{% else %}	
+										<li><a class="nav-link active" href="accounts/signup">Register</a></li>
+										<li><a class="nav-link active" href="accounts/login">Login</a></li>
+						{% endif %}
+          </ul>
+        </div>
+        </div>
+      </nav>
+ </section>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Daycare <small>Where your pets are safe</small></h1>
+</div>
+
+<!-- Real Estate List Map - START -->
+<div class="container">
+    <div class="row">
+        {% for daycare in daycares %}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+            <div class="panel panel-default">
+                <div class="row padall">
+                    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3" style="background-color: #fff;">
+                        <span></span>
+                        <img src="{{daycare.img.url}}" />
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9" style="background-color: #fff;">
+                        <div class="clearfix">
+                            <div class="pull-left">
+                            <h3>{{daycare.name}}</h3>
+                            <br>
+                            <span class="fa fa-rupee icon"> <a href="daycare-details.html">{{daycare.price}} /day</a></span>
+                            </div>
+                        </div>
+                        <div> 
+                            <h4><span class="fa fa-map-marker icon"></span>{{daycare.location}}</h4>
+                            {{daycare.add}}
+                            {% comment %} {{daycare.findshop}} {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+                <div>
+                <button type="button" class="btn btn-dark btn-lg download-button" onclick="document.location='forms/form'"><i class="fas fa-paw"></i> Book a Slot</button>
+                 {% comment %} <p><button class="btn btn-secondary" href="forms/form" role="button">Book a Slot &raquo;</button></p> {% endcomment %}
+                </div>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% comment %} <script src="http://maps.google.com/maps/api/js?sensor=false"></script> {% endcomment %}
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        {% for daycare in daycares %}
+        function init_map1() {
+            var myLocation = new google.maps.LatLng({{daycare.lat}},{{daycare.lon}});
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map1"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        {% endfor %}
+        {% comment %} function init_map2() {
+            var myLocation = new google.maps.LatLng(22.333401341068804, 73.18065710446893);
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map2"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        function init_map3() {
+            var myLocation = new google.maps.LatLng(23.02135744956155, 72.54341696801998);
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map3"),
+                mapOptions);
+            marker.setMap(map);
+        }
+        function init_map4() {
+            var myLocation = new google.maps.LatLng(38.84753, -77.06577290000001);
+            var mapOptions = {
+                center: myLocation,
+                zoom: 16
+            };
+            var marker = new google.maps.Marker({
+                position: myLocation,
+                title: "Property Location"
+            });
+            var map = new google.maps.Map(document.getElementById("map4"),
+                mapOptions);
+            marker.setMap(map);
+        } {% endcomment %}
+         
+        {% for daycare in daycares %}
+        init_map1();
+        {% endfor %}
+        {% comment %} init_map2();
+        init_map3();
+        init_map4(); {% endcomment %}
+    });
+</script>
+
+<style>
+    .gmnoprint img {
+        max-width: none;
+    }
+
+    .map {
+        min-width: 300px;
+        min-height: 200px;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        max-width: 110%;
+        height: auto;
+    }
+
+    .clearfix {
+        clear: both;
+    }
+
+    .rowcolor {
+        background-color: #CCCCCC;
+    }
+
+    .padall {
+        padding: 10px;
+    }
+
+    .padbig {
+        padding: 20px;
+    }
+
+    .icon {
+        font-size: 23px;
+        color: #197BB5;
+    }
+</style>
+
+<!-- Real Estate List Map - END -->
+
+</div>
+
+</body>
+</html>

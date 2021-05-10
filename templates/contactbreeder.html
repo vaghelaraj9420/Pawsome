@@ -1,0 +1,170 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.80.0">
+  <title>Contact Breeder</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/' %}">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static '/docs/5.0/dist/css/bootstrap.min.css' %}" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="{% static '/docs/5.0/assets/img/favicons/apple-touch-icon.png' %}" sizes="180x180">
+  <link rel="icon" href="{% static '/docs/5.0/assets/img/favicons/favicon-32x32.png' %}" sizes="32x32" type="image/png">
+  <link rel="icon" href="{% static '/docs/5.0/assets/img/favicons/favicon-16x16.png' %}" sizes="16x16" type="image/png">
+  <link rel="manifest" href="{% static '/docs/5.0/assets/img/favicons/manifest.json' %}">
+  <link rel="mask-icon" href="{% static '/docs/5.0/assets/img/favicons/safari-pinned-tab.svg' %}" color="#7952b3">
+  <link rel="icon" href="{% static '/docs/5.0/assets/img/favicons/favicon.ico' %}">
+  <meta name="theme-color" content="#7952b3">
+
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+
+  <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+  <!--fontawesome -->
+  <script src="https://use.fontawesome.com/1fded5d95a.js"></script>
+
+
+
+
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="{% static 'mycss/styles.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+  <!-- bootstrap Scripts -->
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' %}" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Font styles:- -->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap' %}" rel="stylesheet">
+
+  <!--fontawesome -->
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'cover.css' %}" rel="stylesheet">
+</head>
+
+<body class="d-flex h-100 text-center text-white" style="background-color:  rgb(240, 248, 255); color: #000000;">
+
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" style="color: #000000;">
+    <header class="mb-auto">
+      <div>
+        <h1 class="float-md-start mb-0">{{product.name}}</h1>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <button type="button" class="btn btn-dark btn-lg mx-5" onclick="document.location='/'"><i class="fas fa-paw"></i> Home</button>
+          <button type="button" class="btn btn-dark btn-lg mx-5" onclick="document.location='contact'"><i class="fas fa-paw"></i> Contact</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      {% comment %}
+      <div class="row">
+        <div class="col-md-4" style="padding:15px;">
+          <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+            <div>
+              <img class="img-responsive" style="width: 250px;  height: 250px; overflow: hidden; border: 1px solid black;" alt="eCommerce Product List" src="{{product.img.url}}" />
+              <br />
+              <h2 class="pull-right">Rs: {{product.price}} </h2>
+              <h2><a href="payment.html">{{product.name}}</a></h2>
+              <h2>{{product.brand}}</h2>
+              <p class="text-justify">{{product.desc}}</p>
+              <p class="text-justify">{{product.offer}}</p>
+            </div>
+            <div class="btn-ground text-center" style="padding-bottom: 30px">
+            </div>
+          </div>
+        </div>
+      </div> {% endcomment %}
+
+
+
+      <div class="container my-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <img src="{{petbreeder.petbreederimg.url}}" width="233px" height="385px">
+            </div>
+          </div>
+
+          <div class="col-md-8" style="text-align: left;">
+            <h2>{{petbreeder.petbreedername}}</h2>
+            <br>
+            <br>
+            {% comment %} <h3><b>Rs: {{petbreeder.price}} </b></h3> {% endcomment %}
+            <h3><b>Status: </b>{{petbreeder.petbreederstatus}}</h3>
+            <br>
+            <br>
+            <h3><b>Phone: </b>{{petbreeder.petbreederphone}}</h3>
+            <br>
+            <br>
+            <h3><b>Email: </b>{{petbreeder.petbreederemail}}</h3>
+            <br>
+            <br>
+            <h3><b>Offer: </b>{{petbreeder.petbreederoffer}}</h3>
+            <br>
+            <br>
+            <h3><b>Location: </b>{{petbreeder.petbreederlocation}}</h3>
+            <br>
+            <br>
+
+            {% comment %} <h3><a href="mailto:{{petbreeder.petbreederemail}}">Mail Me</a></h3> {% endcomment %}
+            <h3><a href="/send/">Mail Me</a></h3>
+          </div>
+        </div>
+
+
+      </div>
+    </main>
+    <footer id="footer">
+      <i class="social-icon fab fa-twitter"></i>
+      <i class="social-icon fab fa-facebook-f"></i>
+      <i class="social-icon fab fa-instagram"></i>
+      <i class="social-icon fas fa-envelope"></i>
+      <p>© Copyright 2021 Pawsome</p>
+
+    </footer>
+  </div>
+
+</body>
+
+</html>

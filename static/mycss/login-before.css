@@ -1,0 +1,14 @@
+.caretaker{
+  height: 400px;
+  width: 400px;
+  background-color: #809fff;
+  text-align: center;
+  padding-top: 10%;
+}
+.customer{
+  height: auto;
+  width: auto;
+  background-color: #aaff80;
+  text-align: center;
+  padding-top: 10%;
+}

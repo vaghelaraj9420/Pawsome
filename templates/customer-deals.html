@@ -1,0 +1,164 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>View Deals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+ <!-- css stylesheet -->
+  <link rel="stylesheet" href="{% static 'mycss/styles.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+  <!-- bootstrap Scripts -->
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' %}" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Font styles:- -->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap' %}" rel="stylesheet">
+
+  <!--fontawesome -->
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+  
+ <style>
+
+  #title {
+    background-color: #ff4c68;
+    color: #fff;
+  }
+
+  .container{
+
+  }
+
+  body {
+    font-family: "Montserrat";
+    background-color: grey;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn{
+   text-align: center;
+  }
+
+
+  /* Navbar */
+
+  .navbar {
+    padding-bottom: 4.5rem;
+    padding-left: 0px;
+  }
+
+  .navbar-brand{
+    font-family: "Ubuntu";
+    font-weight: bold;
+  }
+
+  .nav-item {
+    padding: 0 18px;
+  }
+
+  .nav-link {
+    font-family: "Montserrat-light";
+    font-size: 1.2rem;
+  }
+</style>
+
+</head>
+
+<body style="background-color:	#f0f8ff;">
+
+<section id="title" class="mx-auto mb-4" style="">
+     <nav class="navbar navbar-expand-lg navbar-light-lg navbar-dark" style="padding: 0 0 2.5rem;">
+        <a class="navbar-brand" style="font-size: 2.5rem;" href="/">Pawsome</a>
+
+        <div id="top-section">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+          <ul class="navbar-nav ml-auto" style="margin-top: 30px;">
+            <li class="nav-item" style="margin-left: 50px;">
+              <a class="nav-link active" href="/contact">contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/faq">FAQ</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </nav>
+ </section>
+
+  <div class="container">
+
+    <div class="page-header">
+      <h1 style="margin-bottom: 70px;">Customer Deals <small>View the customers' deals</small></h1>
+    </div>
+
+    <div class="row">
+      {% for i in customerdeals %}
+      <div class="col-md-4" style="padding:15px;">
+        <div style="display:inline-block; border:solid 1px #808080; padding:15px">
+          <div>
+            {% comment %} <img class="img-responsive" style="width: 250px;  height: 250px; overflow: hidden; border: 1px solid black;" alt="eCommerce Product List" src="{{i.img.url}}" /> {% endcomment %}
+             <h2 class="card-title" >Customer Name:{{i.username}}</h2>        
+           <br>
+            <h4>Start Date: {{i.startdate}}</h4>
+            <br>
+            <p class="text-justify">Address: {{i.address}}</p>
+            <br>
+            <p class="text-justify">No of pets: {{i.noofpets}}</p>
+            <br>
+            <p class="text-justify">No of days: {{i.noofdays}}</p>
+            <br>
+            <p class="text-justify">Email: {{i.email}}</p>
+            <br>
+            <p class="text-justify">Phone: {{i.phone}}</p>
+            <br>
+          
+          </div>
+          <a href="send/" style="text-align: center;"><button class="btn btn-dark">Send email</button></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div> 
+ 
+
+  <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+
+  {% block js %}
+  {% endblock %}
+
+  </div>
+
+</body>
+
+</html>

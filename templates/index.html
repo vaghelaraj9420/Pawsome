@@ -1,0 +1,476 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Pawsome</title>
+
+  <!-- css stylesheet -->
+  <link rel="stylesheet" href="{% static 'mycss/styles.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+
+  <!-- bootstrap Scripts -->
+  <script src="{% static 'https://code.jquery.com/jquery-3.5.1.slim.min.js' %}" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="{% static 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' %}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="{% static 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js' %}" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  <!-- Font styles:- -->
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap' %}" rel="stylesheet">
+  <link href="{% static 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap' %}" rel="stylesheet">
+
+  <!--fontawesome -->
+  <script src="{% static 'https://use.fontawesome.com/1fded5d95a.js' %}"></script>
+
+  <style media="screen">
+    body {
+      font-family: "Montserrat";
+      background-color: grey;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-style: "Montserrat-Black";
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+
+
+    /* Heading Section */
+    .heading {
+
+      font-family: "Montserrat-Black";
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+
+    #top-section {
+      margin-top: 50px;
+    }
+
+    .Big-heading {
+      font-family: "Montserrat-Black";
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+
+    #title {
+      background-color: #ff4c68;
+      color: #fff;
+    }
+
+    .container {
+      padding-bottom: 4.5rem;
+    }
+
+
+
+
+    /* Navbar */
+
+    .navbar {
+      padding-bottom: 4.5rem;
+      padding-left: 0px;
+    }
+
+    .navbar-brand {
+      font-family: "Ubuntu";
+      font-weight: bold;
+    }
+
+    .nav-item {
+      padding: 0 18px;
+    }
+
+    .nav-link {
+      font-family: "Montserrat-light";
+      font-size: 1.2rem;
+    }
+
+
+
+
+    /* Navbar Button */
+    .download-button {
+      margin: 5% 3% 5% 0;
+    }
+
+
+
+
+    /* Title Image */
+    .title-image {
+      width: 50%;
+      margin-left: 40px;
+      margin-top: 50px;
+      border-style: 10px solid;
+      position: absolute;
+      z-index: 1;
+      right: 150px;
+    }
+
+    @media (max-width: 1040px) {
+      .container {
+        text-align: center;
+      }
+
+      .title-image {
+        position: static;
+        transform: rotate(0);
+      }
+    }
+
+
+
+
+    /* Features section */
+
+    #features {
+      background-color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    .features-box {
+      text-align: center;
+    }
+
+    .para {
+      padding: 5%;
+      color: #808080;
+    }
+
+
+    .icon {
+      color: #ff4c68;
+      margin-bottom: 1rem;
+    }
+
+    .icon:hover {
+      color: red;
+    }
+
+    #features {
+      padding: 7% 15%;
+    }
+
+
+    /* testimonials-section */
+    #testimonials {
+      background-color: #ff4c68;
+      color: white;
+      text-align: center;
+      font-style: "Montserrat-Bold";
+      line-height: 1.5;
+
+    }
+
+    .testimonials-img {
+      width: 5%;
+      border-radius: 100%;
+      padding: 5px;
+    }
+
+    .testimonial-image {
+      width: 20%;
+      height: 20%;
+    }
+
+    .testimonial-text {
+      font-size: 3rem;
+      line-height: 1.5;
+    }
+
+    .carousel-item {
+      padding: 5%;
+    }
+
+
+
+
+    /* press-section */
+    #press {
+      background-color: #ff4c68;
+      padding-bottom: 3%;
+      padding-top: 5%;
+      text-align: center;
+    }
+
+    .press-img {
+      width: 15%;
+      margin: 20px 20px 50px;
+    }
+
+
+    /* Pricing Section */
+
+    .pricing-section {
+      padding: 20px;
+    }
+
+    .top {
+      padding-top: 50px;
+    }
+
+
+    /* CTA Section */
+    #cta {
+      background-color: #ff4c68;
+      text-align: center;
+      line-height: 1.5;
+      padding: 7% 15%;
+      padding-bottom: 60px;
+      color: #fff;
+      font-family: "Montserrat-Black";
+      font-weight: bold;
+      font-size: 3.5rem;
+    }
+
+    .last-line {
+      margin-bottom: 40px;
+    }
+
+    /* Footer Section */
+    #footer {
+      background-color: #fff;
+      text-align: center;
+      color: #808080;
+      margin: 30px;
+      line-height: 2rem;
+
+    }
+
+    .social-icon {
+      margin: 20px 10px;
+    }
+  </style>
+
+</head>
+
+<body style="background-color: #f0f8ff;">
+
+  <section id="title">
+    <div class="container">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light-lg navbar-dark" style="padding: 0 0 4.5rem;">
+        <a class="navbar-brand" style="font-size: 2.5rem;" href="">Pawsome</a>
+
+        <div id="top-section">
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" style="margin-left: 50px;">
+                <a class="nav-link active" href="products/contact">contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="buy12">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="faq">FAQ</a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active" href="DayCare">Daycare</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Caretaker">Caretaker</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="vet">Ask a veterinary</a>
+              </li>
+              {% comment %} {% if user.is_authenticated %} {% endcomment %}
+              <li><a class="nav-link active"> Hello, {{user.first_name}}</a></li>
+              <li><a class="nav-link active" href="accounts/logout">Logout</a></li>
+              {% else %}
+              {% comment %} <li><a class="nav-link active" href="accounts/signup">Register</a></li>
+              <li><a class="nav-link active" href="accounts/login">Login</a></li> {% endcomment %}
+              <li><a class="nav-link active" href="sign12">Register</a></li>
+              <li><a class="nav-link active" href="login12">Login</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+      <!-- Title -->
+
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="heading Big-heading">Meet new and interesting dogs nearby.</h1>
+          <button type="button" class="btn btn-dark btn-lg download-button" onclick="document.location='PetList'"><i class="fas fa-paw"></i> Shop for Pets</button>
+          <button type="button" class="btn btn-outline-light btn-lg download-button" onclick="document.location='PetProductList'"><i class="fas fa-mouse-pointer"></i> Shop for Pet products</button>
+
+        </div>
+
+        <div class="col-lg-6 title-img">
+          <img class="title-image" src="{% static 'images/dog.png' %}" alt="dog-img">
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section id="features" style="background-color: #f0f8ff;">
+
+    <div class="row">
+      <div class="col-lg-4 features-box">
+        <i class="fas fa-5x fa-check-circle icon"></i>
+        <h3>Easy to use.</h3>
+        <p class="para">So easy to use, even your dog could do it.</p>
+      </div>
+
+      <div class="col-lg-4 features-box">
+        <i class="fas fa-5x fa-heart icon"></i>
+        <h3>Guaranteed to work.</h3>
+        <p class="para">Find the cutest dog you ever wanted or get your money back.</p>
+      </div>
+
+      <div class="col-lg-4 features-box">
+        <i class="fab fa-5x fa-fort-awesome icon"></i>
+        <h3>Elite Categories.</h3>
+        <p class="para">We have all the dogs, the greatest dogs.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+    <div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="2000">
+          <h2 class="testimonial-text">I no longer have to be dependent on master. I have found the greatest salon for myself. woof.</h2>
+          <img class="testimonials-img" src="{% static 'images/dog-img.jpg' %}" alt="dog-profile">
+          <em>Tommy, New Delhi</em>
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <h2 class="testimonial-text">I was used to be so lonely, but with Pawsome's help, they've found me a life partner. I think.</h2>
+          <img class="testimonial-image" src="{% static 'images/lady-img.jpg' %}" alt="lady-profile">
+          <em>Lady gaga, calcutta</em>
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <h2 class="testimonial-text">My life was so miserable before Pawsome. Now i couldnt live better than this.</h2>
+          <img class="testimonial-image" src="{% static 'images/man.jpg' %}" alt="man-profile">
+          <em>Kisan, Bareily</em>
+        </div>
+        <div class="carousel-item" data-interval="2000">
+          <h1 class="d-block w-100">What about you?</h1>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-testimonials" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-testimonials" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- Press -->
+
+  <section id="press">
+    <img class="press-img" src="{% static 'images/techcrunch.png' %}" alt="tc-logo">
+    <img class="press-img" src="{% static 'images/tnw.png' %}" alt="tnw-logo">
+    <img class="press-img" src="{% static 'images/bizinsider.png' %}" alt="biz-insider-logo">
+    <img class="press-img" src="{% static 'images/mashable.png' %}" alt="mashable-logo">
+
+  </section>
+
+
+  <!-- Pricing -->
+
+  <section id="pricing">
+
+    <h2>A Plan for Every one's Needs</h2>
+    <p>Simple and affordable price plans just for you.</p>
+
+    <div class="row">
+      {% for pet in pets %}
+      <div class="pricing-section col-md-4 col-sm-6">
+        <div class="card-header">
+          <h3>{{pet.name}}</h3>
+        </div>
+        <div class="top card-body">
+          <h2>Rs {{pet.price}}</h2>
+          <p>{{pet.colour}}r</p>
+          <p>{{pet.offer}}</p>
+          <p>{{pet.location}}</p>
+
+          {% if user.is_authenticated %}
+          <button type="button" class="btn btn-lg btn-block btn-outline-dark" onclick="document.location='PetList'">Shop Now</button>
+          {% else %}
+          <button type="button" class="btn btn-lg btn-block btn-outline-dark" onclick="document.location='accounts/login'">Sign Up</button>
+          {% endif %}
+        </div>
+
+      </div>
+
+      {% endfor %}
+    </div>
+
+
+
+
+  </section>
+
+  <section id="Chatbot" style="mx-2; text-align: center;">
+
+    <h3>Use Our Chat Bot for further queries</h3>
+    <button type="button" class="btn btn-lg btn-block btn-outline-success" onclick="document.location='chatbot'">Enter Chat Bot</button>
+  </section>
+  <!-- Call to Action -->
+
+  <section id="cta">
+
+    <h3 class="last-line">Find your passion Today.</h3>
+    <button type="button" class="btn btn-dark btn-lg download-button" onclick="document.location='PetList'"><i class="fas fa-paw"></i> Shop for Pets</button>
+    <button type="button" class="btn btn-outline-light btn-lg download-button" onclick="document.location='PetProductList'"><i class="fas fa-mouse-pointer"></i> Shop for Pet products</button>
+  </section>
+
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <i class="social-icon fab fa-twitter"></i>
+    <i class="social-icon fab fa-facebook-f"></i>
+    <i class="social-icon fab fa-instagram"></i>
+    <i class="social-icon fas fa-envelope"></i>
+    <p>© Copyright 2021 Pawsome</p>
+
+  </footer>
+
+
+</body>
+
+</html>

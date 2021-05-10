@@ -1,0 +1,157 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> FAQ - Here to help</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
+
+    <script type="text/javascript" src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    
+     
+</head>
+<body style="background-color: #f0f8ff;">
+
+
+
+<div class="container">
+
+<div class="page-header">
+    <h1>FAQ <small>Here to help</small></h1>
+</div>
+
+<!-- Bootstrap FAQ - START -->
+<div class="container">
+    <br />
+    <br />
+    <br />
+
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        This section contains requestly asked questions. If you cannot find an answer to your question,
+        make sure to contact us.
+    </div>
+
+    <br />
+
+    <div class="panel-group" id="accordion">
+        <div class="faqHeader">General questions</div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is keeping pets safe ?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    YES. According to sesus people who have pets have more epathy quotient ensures a valid communi
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Am i ready for pet?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="panel-body">
+                    One can always be ready for pet all you need is the will. still if you thnk you are eady feel free to talk to one of the vets from out website.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">How much does it cost to have a pet?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="panel-body">
+                    The price varies for breed. other than the cost of buying one would also have to invest for good lifestyle of they pets.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">What Precautions are needed before buying a pet?</a>
+                </h4>
+            </div>
+            <div id="collapseTwelve" class="panel-collapse collapse">
+                <div class="panel-body">
+                   There are certain measures to be followed before selling pets by their breeders. The pet should be properly diagnozed and well cared by the breeder. The pet should be healthy throughout the whole life cycle.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">Is it really necessary to bring my dog and/or cat in for a yearly comprehensive exam?</a>
+                </h4>
+            </div>
+            <div id="collapseThirteen" class="panel-collapse collapse">
+                <div class="panel-body">
+                   Comprehensive examinations are recommended AT LEAST annually to check for health issues that may not be apparent to owners. 
+                   During a comprehensive examination the veterinarian will examine your pet's eyes, ears, skin and hair coat, listen to their heart, and discuss any concerns you may have. 
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen">What dog and cat food brands do you recommend?</a>
+                </h4>
+            </div>
+            <div id="collapseFourteen" class="panel-collapse collapse">
+                <div class="panel-body">
+                    There are many great brands out there. The ones we recommend the most based on years of results and healthy dogs and cats. It is recommended that pets are fed premium diets like Purina, Science Diet, Iams and Eukanuba. 
+                    Occasionally, prescription diets are recommended based on a pet's specific needs. 
+                    Our Veterinarians will make these recommendations when appropriate.
+                </div>
+            </div>
+        </div>
+
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "\e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+
+<!-- Bootstrap FAQ - END -->
+
+</div>
+
+</body>
+</html>

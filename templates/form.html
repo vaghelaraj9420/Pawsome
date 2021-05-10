@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Booking Form</title>
+
+	<!-- css stylesheet -->
+	<link rel="stylesheet" href="mycss/daycare-details.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+	<style media="screen">
+		.section {
+			position: relative;
+			height: 100vh;
+		}
+
+		.section .section-center {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+		}
+
+		#booking {
+			font-family: 'Raleway', sans-serif;
+		}
+
+		.booking-form {
+			position: relative;
+			max-width: 642px;
+			width: 100%;
+			margin: auto;
+			padding: 40px;
+			overflow: hidden;
+			background-image: url('../img/background.jpg');
+			background-size: cover;
+			border-radius: 5px;
+			z-index: 20;
+		}
+
+		.booking-form::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			background: rgba(0, 0, 0, 0.7);
+			z-index: -1;
+		}
+
+		.booking-form .form-header {
+			text-align: center;
+			position: relative;
+			margin-bottom: 30px;
+		}
+
+		.booking-form .form-header h1 {
+			font-weight: 700;
+			text-transform: capitalize;
+			font-size: 42px;
+			margin: 0px;
+			color: #fff;
+		}
+
+		.booking-form .form-group {
+			position: relative;
+			margin-bottom: 30px;
+		}
+
+		.booking-form .form-control {
+			background-color: rgba(255, 255, 255, 0.2);
+			height: 60px;
+			padding: 0px 25px;
+			border: none;
+			border-radius: 40px;
+			color: #fff;
+			-webkit-box-shadow: 0px 0px 0px 2px transparent;
+			box-shadow: 0px 0px 0px 2px transparent;
+			-webkit-transition: 0.2s;
+			transition: 0.2s;
+		}
+
+		.booking-form .form-control::-webkit-input-placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.booking-form .form-control:-ms-input-placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.booking-form .form-control::placeholder {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.booking-form .form-control:focus {
+			-webkit-box-shadow: 0px 0px 0px 2px #ff8846;
+			box-shadow: 0px 0px 0px 2px #ff8846;
+		}
+
+		.booking-form input[type="date"].form-control {
+			padding-top: 16px;
+		}
+
+		.booking-form input[type="date"].form-control:invalid {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.booking-form input[type="date"].form-control+.form-label {
+			opacity: 1;
+			top: 10px;
+		}
+
+		.booking-form select.form-control {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+		}
+
+		.booking-form select.form-control:invalid {
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.booking-form select.form-control+.select-arrow {
+			position: absolute;
+			right: 15px;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			width: 32px;
+			line-height: 32px;
+			height: 32px;
+			text-align: center;
+			pointer-events: none;
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 14px;
+		}
+
+		.booking-form select.form-control+.select-arrow:after {
+			content: '\279C';
+			display: block;
+			-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+		}
+
+		.booking-form select.form-control option {
+			color: #000;
+		}
+
+		.booking-form .form-label {
+			position: absolute;
+			top: -10px;
+			left: 25px;
+			opacity: 0;
+			color: #ff8846;
+			font-size: 11px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1.3px;
+			height: 15px;
+			line-height: 15px;
+			-webkit-transition: 0.2s all;
+			transition: 0.2s all;
+		}
+
+		.booking-form .form-group.input-not-empty .form-control {
+			padding-top: 16px;
+		}
+
+		.booking-form .form-group.input-not-empty .form-label {
+			opacity: 1;
+			top: 10px;
+		}
+
+		.booking-form .submit-btn {
+			color: #fff;
+			background-color: #ff4c68;
+			font-weight: 700;
+			height: 60px;
+			padding: 10px 30px;
+			width: 100%;
+			border-radius: 40px;
+			border: none;
+			text-transform: uppercase;
+			font-size: 16px;
+			letter-spacing: 1.3px;
+			-webkit-transition: 0.2s all;
+			transition: 0.2s all;
+		}
+
+		.booking-form .submit-btn:hover,
+		.booking-form .submit-btn:focus {
+			opacity: 0.9;
+		}
+	</style>
+
+</head>
+
+<body style="background-color: #f0f8ff;">
+	{% comment %} <div id="booking" class="section">
+		<div class="section-center">
+			<div class="container"> {% endcomment %}
+				<main class="form-login" style="text-align: center;">
+					<div class="row">
+						<div class="booking-form">
+							<div class="form-header">
+								<h1>Make your reservation</h1>
+							</div>
+							<form action="form" method="post">
+								{% csrf_token %}
+								<div class="form-group">
+									<input class="form-control" type="text" placeholder="State, ZIP, city..." name="address" maxlength="100" required>
+									{% comment %} <span class="form-label">Destination</span> {% endcomment %}
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input class="form-control" type="date" name="startdate" required>
+											<span class="form-label" style="color: #ff4c68;">Daycare start date</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										{% comment %} <div class="form-group">
+											<input class="form-control" type="date" name="enddate" required>
+											<span class="form-label">Daycare end date</span>
+										</div> {% endcomment %}
+										<div>
+											<input type="text" class="form-control text-line" placeholder="Enter Your username" name="username" maxlength="50" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<select class="form-control" name="noofpets" required>
+												<option value="" selected hidden>no of pets</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+
+											</select>
+											<span class="select-arrow"></span>
+											<span class="form-label">pets</span>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<select class="form-control" name="noofdays" required>
+												<option value="" selected hidden>no of days</option>
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+												<option>4</option>
+												<option>5</option>
+											</select>
+											<span class="select-arrow"></span>
+											<span class="form-label">days</span>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<input class="form-control" type="email" placeholder="Enter your Email" name="email" maxlength="70">
+											<span class="form-label">Email</span>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<input class="form-control" type="tel" placeholder="Enter you Phone" name="phone" maxlength="12">
+											<span class="form-label">Phone</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-btn">
+									<button class="submit-btn" name="submit" value="submit">Book Now</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</main>
+				{% comment %}
+			</div>
+		</div>
+	</div> {% endcomment %}
+
+	<div>
+		{% for message in messages %}
+		<h3> {{message}} </h3>
+		{% endfor %}
+	</div>
+
+	<script src="daycare-details.js"></script>
+	<script>
+		$('.form-control').each(function() {
+			floatedLabel($(this));
+		});
+
+		$('.form-control').on('input', function() {
+			floatedLabel($(this));
+		});
+
+		function floatedLabel(input) {
+			var $field = input.closest('.form-group');
+			if (input.val()) {
+				$field.addClass('input-not-empty');
+			} else {
+				$field.removeClass('input-not-empty');
+			}
+		}
+	</script>
+
+</body>
+
+</html>

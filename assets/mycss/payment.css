@@ -1,0 +1,11 @@
+.container {
+  max-width: 960px;
+}
+
+.form-label{
+  margin-top: 20px;
+}
+
+.bg-light{
+  background-color: blue;
+}
